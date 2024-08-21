@@ -1,4 +1,4 @@
-# Burp Extractor
+# Burp Extractor - Qol Update
 Please visit the <a href="https://github.com/PortSwigger/token-extractor">original Token Extractor Repository</a> for information on using the extension.
 
 ## Functionality Updates
