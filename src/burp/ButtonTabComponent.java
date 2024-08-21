@@ -27,7 +27,7 @@ public class ButtonTabComponent extends JPanel {
     private class TabButton extends JButton implements ActionListener {
 
         public TabButton() {
-            int size = 15;
+            int size = 12;
             setPreferredSize(new Dimension(size, size));
             setToolTipText("close this tab");
             setText("x");
@@ -35,7 +35,7 @@ public class ButtonTabComponent extends JPanel {
             setContentAreaFilled(false);
             //No need to be focusable
             setFocusable(false);
-            setBorder(BorderFactory.createEtchedBorder());
+            setBorder(BorderFactory.createMatteBorder(1,1,1,1, Color.LIGHT_GRAY));
             setBorderPainted(false);
             //Making nice rollover effect
             //we use the same listener for all buttons

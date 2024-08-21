@@ -1,12 +1,14 @@
-apply plugin: 'java'
+plugins {
+   id 'java'
+}
 
 repositories {
     mavenCentral()
 }
 
 dependencies {
-    compile 'net.portswigger.burp.extender:burp-extender-api:1.7.22'
-    compile 'com.google.code.gson:gson:2.8.6'
+    implementation 'net.portswigger.burp.extender:burp-extender-api:+'
+    implementation 'com.google.code.gson:gson:2.8.6'
 }
 
 sourceSets {
@@ -20,11 +22,8 @@ sourceSets {
     }
 }
 
-targetCompatibility = '1.8'
-sourceCompatibility = '1.8'
-
 task fatJar(type: Jar) {
-    baseName = project.name + '-all'
-    from { configurations.compile.collect { it.isDirectory() ? it : zipTree(it) } }
+    archiveBaseName = project.name + '-qol'
+    from { configurations.runtimeClasspath.collect { it.isDirectory() ? it : zipTree(it) } }
     with jar
 }

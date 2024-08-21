@@ -42,7 +42,8 @@ public class ExtractorSelectorTab implements ITab {
 
 		// Add debug button
 		JButton debugButton = new JButton("Debug");
-		debugButton.setBackground(Color.LIGHT_GRAY);
+		debugButton.setBackground(Color.GRAY);
+		debugButton.setForeground(Color.WHITE);
 		this.debugOn = false;
 		constraints.gridy = 0;
 		upperButtonPanel.add(debugButton, constraints);
@@ -54,12 +55,14 @@ public class ExtractorSelectorTab implements ITab {
 
 				// Change button appearance
 				if (debugOn) {
-					debugButton.setBackground(Color.GRAY);
+					debugButton.setBackground(Color.CYAN);
+					debugButton.setForeground(Color.WHITE);
 					Logger.setLogLevel(Logger.DEBUG);
 
 
 				} else {
-					debugButton.setBackground(Color.LIGHT_GRAY);
+					debugButton.setBackground(Color.GRAY);
+					debugButton.setForeground(Color.WHITE);
 					Logger.setLogLevel(Logger.INFO);
 				}
 			}
@@ -157,7 +160,7 @@ public class ExtractorSelectorTab implements ITab {
 
 		// Create request table label
 		JLabel requestLabel = new JLabel("Select request to insert data into:");
-		requestLabel.setBorder(BorderFactory.createEmptyBorder(4,0,4,0));
+		requestLabel.setBorder(BorderFactory.createEmptyBorder(4,4,4,4));
 		constraints.gridx = 0;
 		constraints.gridy = 0;
 		constraints.weighty = 0;
@@ -166,7 +169,7 @@ public class ExtractorSelectorTab implements ITab {
 
 		// Create response table label
 		JLabel responseLabel = new JLabel("Select response to extract data from:");
-		responseLabel.setBorder(BorderFactory.createEmptyBorder(4,0,4,0));
+		responseLabel.setBorder(BorderFactory.createEmptyBorder(4,4,4,4));
 		constraints.gridx = 0;
 		constraints.gridy = 2;
 		constraints.weighty = 0;
@@ -182,7 +185,7 @@ public class ExtractorSelectorTab implements ITab {
 		this.requestTable = new JTable(requestModel) {
 			public Component prepareRenderer(TableCellRenderer renderer, int row, int column) {
 				Component c = super.prepareRenderer(renderer, row, column);
-				c.setForeground(Color.black);
+				c.setForeground(Color.white);
 				return c;
 			}
 		};
@@ -203,7 +206,7 @@ public class ExtractorSelectorTab implements ITab {
 		this.responseTable = new JTable(responseModel) {
 			public Component prepareRenderer(TableCellRenderer renderer, int row, int column) {
 				Component c = super.prepareRenderer(renderer, row, column);
-				c.setForeground(Color.black);
+				c.setForeground(Color.white);
 				return c;
 			}
 		};
@@ -231,7 +234,7 @@ public class ExtractorSelectorTab implements ITab {
 	public Component getUiComponent() {
 
 		JPanel pane = new JPanel();
-		pane.setBorder(BorderFactory.createMatteBorder(5,5,5, 5, new Color(255,255,255)));
+		pane.setBorder(BorderFactory.createEmptyBorder(4,8,4,8));
 		pane.setLayout(new GridBagLayout());
 		addLabels(pane);
 		addButtonPanel(pane);

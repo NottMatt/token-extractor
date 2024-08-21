@@ -36,11 +36,11 @@ public class ExtractorTab implements ITab {
 		this.splitPane.setResizeWeight(0.5);
 		JPanel leftPane = new JPanel();
 		leftPane.setLayout(new GridBagLayout());
-		leftPane.setBorder(BorderFactory.createEmptyBorder(0,0,0,4));
+		leftPane.setBorder(BorderFactory.createEmptyBorder(0,4,0,4));
 		this.splitPane.setLeftComponent(leftPane);
 		JPanel rightPane = new JPanel();
 		rightPane.setLayout(new GridBagLayout());
-		rightPane.setBorder(BorderFactory.createEmptyBorder(0,4,0,0));
+		rightPane.setBorder(BorderFactory.createEmptyBorder(0,4,0,4));
 		this.splitPane.setRightComponent(rightPane);
 		GridBagConstraints constraints = new GridBagConstraints();
 		constraints.insets = new Insets(2,2,2,2);
@@ -83,7 +83,8 @@ public class ExtractorTab implements ITab {
 		buttonPanel.setAlignmentX(Component.LEFT_ALIGNMENT);
 		this.modifyRequests = new JButton("Turn Extractor on");
 		this.modifyRequests.setFont(this.boldFont);
-		this.modifyRequests.setBackground(Color.LIGHT_GRAY);
+		this.modifyRequests.setBackground(Color.GRAY);
+		this.modifyRequests.setForeground(Color.WHITE);
 		this.extractorOn = false;
 		buttonPanel.add(this.modifyRequests);
 		this.modifyRequests.addMouseListener(new MouseAdapter() {
@@ -94,10 +95,12 @@ public class ExtractorTab implements ITab {
 
 				// Change button appearance
 				if (extractorOn) {
-					modifyRequests.setBackground(Color.GRAY);
+					modifyRequests.setBackground(Color.CYAN);
+					modifyRequests.setForeground(Color.WHITE);
 					modifyRequests.setText("Turn Extractor off");
 				} else {
-					modifyRequests.setBackground(Color.LIGHT_GRAY);
+					modifyRequests.setBackground(Color.GRAY);
+					modifyRequests.setForeground(Color.WHITE);
 					modifyRequests.setText("Turn Extractor on");
 				}
 			}
