@@ -247,6 +247,7 @@ public class ExtractorTab implements ITab {
 				"make customizations to those regex strings, you can! Just make sure that you escape characters that " +
 				"are have special regex meaning. That seems to be anything in this list, though there may be " +
 				"something missing: !$^&*()-+{[}]|\\:,.?</p></body></html>");
+		highlightInstructions.setBorder(new EmptyBorder(0,5,0,0));
 		highlightInstructions.putClientProperty("html.disable", null);
 		helpScrollPanel.add(highlightInstructions);
 
@@ -261,6 +262,7 @@ public class ExtractorTab implements ITab {
 				"examined, and a message from a matching host will cause Extractor to examine it." +
 				"</p><p>Use the \"Select in-scope tools\" button to select the tools that Extractor will " +
 				"examine for matching tokens.</p></body></html>");
+		scopeInstructions.setBorder(new EmptyBorder(0,5,0,0));
 		scopeInstructions.putClientProperty("html.disable", null);
 		helpScrollPanel.add(scopeInstructions);
 
@@ -275,6 +277,7 @@ public class ExtractorTab implements ITab {
 				"has found a match in a response, it will save the text, and write it to the selected location in the " +
 				"request. Multiple Extractor tabs can be used at once, and will execute in the order they were created." +
 				"</p></body></html>");
+		extractorInstructions.setBorder(new EmptyBorder(0,5,0,0));
 		extractorInstructions.putClientProperty("html.disable", null);
 		helpScrollPanel.add(extractorInstructions);
 
