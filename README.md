@@ -9,5 +9,6 @@ Please visit the <a href="https://github.com/PortSwigger/token-extractor">origin
 
 ## Build from Source Code
 - Install Gradle
+- Install a valid JDK
 - Run `$ gradle fatJar`
 - locate jar file in /build/libs directory
